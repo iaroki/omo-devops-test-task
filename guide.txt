@@ -5,9 +5,9 @@ Git repository contains:
 Ubuntu 18.04 image
 
 2. After creating Dockerfile there are two ways. 
-First way is with inputting my private password for Dockerhub - PASSWDstart_script.sh  
+First way is with inputting my private password for Dockerhub - start_script_with_password.sh
 Please input the following command:
-vi PASSWDstart_script.sh  
+vi start_script_with_password.sh  
 Input my private password instead of 'INPUT_PASSWORD' and save the file. Tha password is sent by Telegram to Anastasia Smidovich
 DOCKER_PASS=INPUT_PASSWORD 
 The following steps will be done:
@@ -15,9 +15,9 @@ The following steps will be done:
 - push Dockerimage to DockerHub
 - pull from DockerHub and run app on localhost:4996 with the help of playbook deploy_run_app.py.yml
 
-The second one is without inputting my private password, without push to Dockerhub, without pull from Dockerhub - start_script_WithoutPushPULL.sh
+The second one is without inputting my private password, without push to Dockerhub, without pull from Dockerhub - start_script_without_password.sh
 The following steps will be done:
 - docker build
-- run app from Dockerimage from HDD on localhost:4996 with the help of playbook WithoutPull_deploy_run_app.py.yml
+- run app from Dockerimage from HDD on localhost:4996 with the help of playbook deploy_run_without_pull.yml
 
 The thing I want to mention about this project is that to make the whole automation of the project, I need to send password for DockerHub in script. That is not secure.
