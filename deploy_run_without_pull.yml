@@ -1,11 +1,11 @@
 ---
-- name: deploy 
+- name: run app.py 
   hosts: localhost
   become: yes
 
   tasks:
-    - name: pull image
-      shell: docker pull sergeyzaika/app.py:v1
+          #    - name: pull image
+          #      shell: docker pull sergeyzaika/app.py:v1
            
     - debug:
         msg: 
@@ -15,4 +15,4 @@
           - Servise app.py will be started at 'localhost:4996'
           - Servise app.py will be started at 'localhost:4996'
     - name: docker run 
-      shell: docker run -p 4996:4996 sergeyzaika/app.py:v1
+      shell: docker run -p 4996:4996 sergeyzaika/app.py:v1 
