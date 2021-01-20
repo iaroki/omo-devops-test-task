@@ -4,5 +4,5 @@
   become: true
 
   tasks:
-    - name: docker run 
+    - name: docker run application
       shell: docker run -d -p 4996:4996 app.py:latest

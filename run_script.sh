@@ -62,7 +62,7 @@ echo "------Run Ansible playbook------"
 	
 echo $'\n'
 	
-echo "------App started------"
+echo "------App started on localhost:4996------"
 
 
 
