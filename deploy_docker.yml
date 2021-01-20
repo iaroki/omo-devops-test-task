@@ -1,0 +1,8 @@
+---
+- name: run python application 
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: docker run 
+      shell: docker run -d -p 4996:4996 app.py:latest

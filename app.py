@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
+from flask import jsonify
+
 
 app = Flask(__name__)
 
@@ -64,7 +66,6 @@ def deleteBook(book_id):
 """
 api functions
 """
-from flask import jsonify
 
 
 def get_books():
@@ -132,5 +133,4 @@ def bookFunctionId(id):
 
 
 if __name__ == '__main__':
-    app.debug = True
-    app.run(host='0.0.0.0', port=4996)
+    app.run(host='0.0.0.0', port=4996, debug=True)
