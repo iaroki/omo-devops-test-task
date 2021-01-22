@@ -4,5 +4,11 @@
   become: true
 
   tasks:
-    - name: docker run application
-      shell: docker run -d -p 4996:4996 app.py:latest
+    - name: Run a container
+      docker_container:
+        name: run application
+        image: local/app.py:prod
+        state: started
+        ports:
+         - "4996:4996"
+       
