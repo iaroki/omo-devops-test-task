@@ -2,39 +2,36 @@
 
 echo "----------Install Python-----------------"
 package=python3
-    
 	apt-get update
-    apt-get upgrade -y
-    apt-get install $package -y;
-    echo "$package is installed."
+	apt-get upgrade -y
+	apt-get install $package -y;
+	echo "$package is installed."
 	
 echo $'\n'
 
 echo "------Install Ansible------"
 package=ansible
-
-    apt-add-repository ppa:ansible/ansible
+	apt-add-repository ppa:ansible/ansible
 	apt-get update -y
-    apt-get upgrade -y
-    apt-get install $package -y;
-    echo "$package is installed."
+	apt-get upgrade -y
+	apt-get install $package -y;
+	echo "$package is installed."
 
 
 echo $'\n'
 
 echo "------Install Docker------"
 package=docker
- 
 	apt-get update -y
-    apt-get upgrade -y
+	apt-get upgrade -y
     
 	#Docker dependencies
 	
 	apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
+	apt-transport-https \
+	ca-certificates \
+	curl \
+	gnupg-agent \
 	
 	#Docker GPG key
 	
@@ -44,7 +41,7 @@ package=docker
 	apt-get install $package -y
 	systemctl start $package -y
 	systemctl enable $package -y;
-    echo "$package is installed."
+	echo "$package is installed."
 
 
 echo $'\n'
