@@ -49,7 +49,7 @@ echo $'\n'
 echo "------Build Docker image------"
 	
 	#Create Docker image from Dockerfile
-	docker build -t app.py .
+	docker build -t local/app.py:prod .
 	
 echo $'\n'
 
