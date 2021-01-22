@@ -3,4 +3,4 @@ WORKDIR /app
 COPY . . 
 RUN pip3 install -r requirements.txt
 EXPOSE 4996
-CMD [ "python3", "./app.py" ]
+ENTRYPOINT [ "python3", "./app.py" ]
