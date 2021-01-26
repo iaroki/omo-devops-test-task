@@ -1,0 +1,2 @@
+[Hosts]
+linux        ansible_host=#add IP HOST       ansible_user=#add user

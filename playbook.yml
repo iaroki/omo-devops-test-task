@@ -1,0 +1,15 @@
+---
+- hosts: all
+  name: Pull app
+
+  tasks:
+     - name: pull
+       docker_image:
+         name: andrey777555/app:v1
+     - name: web_container
+       docker_container:
+         name: web
+         image: andrey777555/app:v1
+         state: started
+         ports:
+           - "5000:4996"
