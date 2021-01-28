@@ -31,5 +31,5 @@
      - name: Create container
        docker_container:
             name: my-app
-            image: ydat/my-app:0.1
+            image: ydat/my-app
             state: present                 

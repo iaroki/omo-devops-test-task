@@ -20,13 +20,17 @@ echo $'\n'
 echo "--------Create Docker build---------"
         
         set -x
-        build_image=$(docker build -d -t ydat/my-app:0.1 .)
-        echo "$build_image"
+        image_ID=$(docker build -q -t ydat/my-app .)
+        sleep 10
+        echo "$image_ID"
         echo $'\n'
+        docker tag $image_ID ydat/my-app
         docker ps -a
+        echo $'\n'
+        sleep 10
         echo "$DOCKER_HUB_PWD" | docker login --username="$DOCKER_HUB_UNAME" 
         echo $'\n'
-        docker push ydat/my-app:0.1
+        docker push ydat/my-app
 echo $'\n'
 
 echo "------Run Ansible playbook------"
