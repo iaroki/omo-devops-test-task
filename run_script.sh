@@ -17,6 +17,18 @@ package=docker
 
 echo $'\n'
 
+echo "--------Create Docker build---------"
+        
+        set -x
+        build_image=$(docker build -d -t ydat/my-app:0.1 .)
+        echo "$build_image"
+        echo $'\n'
+        docker ps -a
+        echo "$DOCKER_HUB_PWD" | docker login --username="$DOCKER_HUB_UNAME" 
+        echo $'\n'
+        docker push ydat/my-app:0.1
+echo $'\n'
+
 echo "------Run Ansible playbook------"
 
 	ansible-playbook deploy_docker.yml
