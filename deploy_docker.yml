@@ -1,14 +1,35 @@
 ---
-- name: run python application 
-  hosts: localhost
-  become: true
+ - name: Run Flask APP
+   hosts: localhost
+   become: true
+   gather_facts: false
 
-  tasks:
-    - name: Run a container
-      docker_container:
-        name: run application
-        image: local/app.py:prod
-        state: started
-        ports:
-         - "4996:4996"
+
+   tasks:
+     - name: Prepare docker repo
+       yum_repository:
+            description: docker local repo
+            name: docker-ce
+            baseurl: https://download.docker.com/linux/centos/8/x86_64/stable/
+            gpgcheck: no
+
+    
+     - name: Install Docker
+       package:
+            name: docker-ce
+            state: present
+
+     - name: Start Docker service on CentOS
+       service:
+            name: docker
+            state: started
        
+     - name: Install docker SDK
+       command: "pip3 install docker"
+     
+
+     - name: Create container
+       docker_container:
+            name: my-app
+            image: ydat/my-app:0.1
+            state: present                 
