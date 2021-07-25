@@ -1,0 +1,12 @@
+---
+ - name: Deploy App
+   hosts: App
+   become: true
+
+
+   tasks:
+     - name: Create container
+       docker_container:
+            name: Web-app
+            image: tasmanaa/omo-devops-test-task
+            state: present
