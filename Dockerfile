@@ -15,4 +15,4 @@ COPY . /app
 
 ENV PATH=/root/.local:$PATH
 
-CMD ["python3", "app.py"]
+ENTRYPOINT ["python3", "app.py"]
